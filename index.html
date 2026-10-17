@@ -1,400 +1,150 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Para mi Trébol 🍀❤️</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+    <title>Para mi Trébol 🍀</title>
 
-    body {
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: 'Georgia', serif;
-        background: linear-gradient(135deg, #ffe0ec, #e8d5ff, #d6f5e3);
-        overflow-x: hidden;
-        padding: 25px 15px;
-    }
-
-    .heart {
-        position: fixed;
-        bottom: -50px;
-        font-size: 24px;
-        animation: flotar 9s linear infinite;
-        opacity: 0;
-        pointer-events: none;
-    }
-
-    @keyframes flotar {
-        0% {
-            transform: translateY(0) rotate(0deg);
-            opacity: 0;
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
-        15% {
-            opacity: 0.8;
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Georgia, serif;
+            background: linear-gradient(135deg, #ffe0ec, #e8d5ff, #d6f5e3);
+            overflow: hidden;
+            padding: 20px;
         }
-        85% {
-            opacity: 0.8;
-        }
-        100% {
-            transform: translateY(-110vh) rotate(360deg);
-            opacity: 0;
-        }
-    }
 
-    .carta {
-        width: 100%;
-        max-width: 500px;
-        background: rgba(255, 255, 255, 0.88);
-        padding: 35px 25px;
-        border-radius: 28px;
-        text-align: center;
-        box-shadow: 0 15px 45px rgba(160, 100, 150, 0.2);
-        border: 2px solid rgba(255, 255, 255, 0.9);
-        position: relative;
-        z-index: 2;
-        animation: aparecer 1.5s ease;
-    }
-
-    @keyframes aparecer {
-        from {
-            opacity: 0;
-            transform: translateY(30px) scale(0.95);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-    }
-
-    .flor {
-        font-size: 55px;
-        margin-bottom: 10px;
-        animation: latido 2s infinite;
-    }
-
-    @keyframes latido {
-        0%, 100% {
-            transform: scale(1);
-        }
-        50% {
-            transform: scale(1.12);
-        }
-    }
-
-    h1 {
-        color: #d94f83;
-        font-size: 34px;
-        margin-bottom: 8px;
-    }
-
-    .subtitulo {
-        color: #9c79b8;
-        font-size: 15px;
-        font-style: italic;
-        margin-bottom: 25px;
-    }
-
-    .separador {
-        color: #e99bb8;
-        font-size: 22px;
-        margin: 20px 0;
-        letter-spacing: 8px;
-    }
-
-    .mensaje {
-        color: #594558;
-        font-size: 17px;
-        line-height: 1.9;
-        text-align: left;
-    }
-
-    .mensaje p {
-        margin-bottom: 17px;
-    }
-
-    .destacado {
-        color: #d94f83;
-        font-weight: bold;
-    }
-
-    .frase {
-        background: linear-gradient(135deg, #fff0f5, #f5edff);
-        padding: 20px;
-        border-radius: 18px;
-        color: #b34f82;
-        font-size: 18px;
-        font-style: italic;
-        line-height: 1.7;
-        margin-top: 25px;
-    }
-
-    button {
-        margin-top: 25px;
-        background: linear-gradient(135deg, #f48fb1, #bd8be8);
-        color: white;
-        border: none;
-        padding: 15px 25px;
-        border-radius: 30px;
-        font-size: 16px;
-        font-family: inherit;
-        cursor: pointer;
-        box-shadow: 0 5px 15px rgba(200, 120, 180, 0.25);
-        transition: transform 0.3s;
-    }
-
-    button:hover {
-        transform: scale(1.05);
-    }
-
-    #sorpresa {
-        display: none;
-        margin-top: 25px;
-        color: #d94f83;
-        font-size: 19px;
-        line-height: 1.8;
-        animation: aparecer 1s ease;
-    }
-
-    .firma {
-        margin-top: 30px;
-        color: #9c79b8;
-        font-size: 16px;
-        line-height: 1.8;
-    }
-
-    .firma strong {
-        color: #d94f83;
-        font-size: 22px;
-    }
-
-    @media (max-width: 400px) {
         .carta {
-            padding: 28px 20px;
+            background: rgba(255, 255, 255, 0.85);
+            padding: 40px 25px;
+            border-radius: 25px;
+            text-align: center;
+            max-width: 380px;
+            width: 100%;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            animation: aparecer 1.2s ease;
+            z-index: 1;
+        }
+
+        .trebol {
+            font-size: 55px;
+            margin-bottom: 15px;
+            animation: latido 2s infinite;
         }
 
         h1 {
-            font-size: 29px;
+            color: #d94f83;
+            font-size: 30px;
+            margin-bottom: 15px;
         }
 
         .mensaje {
-            font-size: 16px;
+            color: #594558;
+            font-size: 17px;
+            line-height: 1.8;
         }
-    }
-</style>
+
+        .corazon {
+            color: #e879a9;
+            font-size: 22px;
+            margin-top: 20px;
+        }
+
+        .firma {
+            color: #9c79b8;
+            font-size: 14px;
+            margin-top: 25px;
+            font-style: italic;
+        }
+
+        .flotante {
+            position: fixed;
+            bottom: -30px;
+            animation: flotar 7s linear forwards;
+            pointer-events: none;
+        }
+
+        @keyframes aparecer {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes latido {
+            50% {
+                transform: scale(1.12);
+            }
+        }
+
+        @keyframes flotar {
+            to {
+                transform: translateY(-110vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="carta">
+    <div class="carta">
+        <div class="trebol">🍀</div>
 
-    <div class="flor">🍀</div>
+        <h1>Para mi Trébol</h1>
 
-    <h1>Para mi Trébol</h1>
+        <p class="mensaje">
+            Esta es mi primera página web.
+            <br><br>
+            Quiero aprender, crecer y lograr muchas cosas...
+            y qué bonito sería compartir mis logros contigo. ❤️
+        </p>
 
-    <div class="subtitulo">
-        Para la personita que merece un mundo bonito ❤️
+        <div class="corazon">♡ ✧ ♡</div>
+
+        <div class="firma">
+            Un pequeño detalle para ti. 💗
+        </div>
     </div>
 
-    <div class="separador">♡ ✧ ♡</div>
+    <script>
+        function crearCorazon() {
+            const corazon = document.createElement("div");
+            corazon.className = "flotante";
 
-    <div class="mensaje">
+            const simbolos = ["❤️", "💕", "🍀", "✨"];
+            corazon.textContent =
+                simbolos[Math.floor(Math.random() * simbolos.length)];
 
-        <p>
-            Mi niña hermosa, <span class="destacado">Trébol</span>:
-        </p>
+            corazon.style.left = Math.random() * 100 + "vw";
+            corazon.style.fontSize = (15 + Math.random() * 15) + "px";
+            corazon.style.animationDuration = (5 + Math.random() * 4) + "s";
 
-        <p>
-            Sé que hoy no ha sido un buen día para ti, y me gustaría
-            poder abrazarte tan fuerte que por un ratito se te olvidara
-            todo lo que te hizo sentir mal. 🥺❤️
-        </p>
+            document.body.appendChild(corazon);
 
-        <p>
-            Si pudiera, recogería cada cosita que te puso triste,
-            cada preocupación que te cansó y cada lágrima que
-            amenazó con salir de tus ojitos, y las cambiaría por
-            abrazos, besitos y muchas razones para sonreír.
-        </p>
-
-        <p>
-            Pero como no puedo quitarte todos los problemas con
-            un chasquido de dedos, quiero recordarte algo:
-            <span class="destacado">no tienes que poder con todo
-            todos los días.</span>
-        </p>
-
-        <p>
-            También puedes cansarte, llorar, sentirte triste y
-            querer que el mundo se detenga un poquito.
-            No tienes que fingir que estás bien conmigo.
-            Si hoy necesitas descansar, aquí estoy.
-            Si necesitas desahogarte, te escucho.
-            Y si no quieres decir ni una palabra, también
-            puedo acompañarte en silencio. 🫂💕
-        </p>
-
-        <p>
-            ¿Sabes por qué me gusta tanto tu nombre?
-            Porque un trébol de cuatro hojas es símbolo de suerte,
-            pero tú, mi amor, tienes algo todavía más bonito:
-            <span class="destacado">haces especial la vida de alguien
-            simplemente siendo tú.</span>
-        </p>
-
-        <p>
-            Y aunque hoy el día no te haya tratado como mereces,
-            eso no cambia ni un poquito lo maravillosa que eres.
-            Un día malo no te hace menos increíble.
-            Un momento triste no apaga tu luz.
-            Y ninguna dificultad puede borrar todas las cosas
-            bonitas que hay dentro de ti. 🌷
-        </p>
-
-        <p>
-            Ojalá pudiera aparecer ahora mismo a tu lado,
-            darte un besito en la frente, acomodarte entre mis brazos
-            y decirte al oído que todo va a estar bien,
-            que no tienes que resolverlo todo esta noche
-            y que, por ahora, puedes descansar.
-        </p>
-
-        <p>
-            Quiero que recuerdes que eres mucho más que tus días
-            difíciles. Eres tus sonrisas, tus ocurrencias,
-            tu manera de ser, tus pequeños detalles y esa forma
-            tan tuya de hacer que alguien pueda sentirse afortunado
-            de tenerte en su vida.
-        </p>
-
-        <p>
-            Y yo, mi Trébol precioso, quiero ser esa personita
-            que te recuerde lo valiosa que eres cuando tú misma
-            tengas dificultades para verlo. Quiero celebrar tus
-            días felices y acompañarte en los que no lo sean tanto.
-            No solo cuando sonrías, sino también cuando necesites
-            un abrazo y un poquito de paz. ❤️
-        </p>
-
-    </div>
-
-    <div class="frase">
-        "Si hoy el mundo fue un poquito cruel contigo,
-        déjame recordarte lo bonito que puede ser.
-        Y si hoy te faltaron motivos para sonreír,
-        espero que estas palabras te regalen uno.
-        Porque tu sonrisa merece volver,
-        pero tu tristeza también merece ser escuchada." 💗
-    </div>
-
-    <button onclick="mostrarSorpresa()">
-        Tengo algo más que decirte 💌
-    </button>
-
-    <div id="sorpresa">
-        <p>Mi niña bonita, ¿sabes qué? 🥹❤️</p>
-
-        <p>
-            Si pudiera pedirle un deseo al universo esta noche,
-            pediría que te diera tranquilidad en tu cabecita,
-            paz en tu corazón y un millón de motivos para
-            volver a sonreír.
-        </p>
-
-        <p>
-            Y si pudiera pedir un segundo deseo,
-            pediría estar a tu lado para darte todos esos
-            abrazos que hoy te hicieron falta.
-        </p>
-
-        <p>
-            <strong>Te mereces cosas bonitas, Trébol.</strong>
-            No solamente mañana, cuando todo mejore,
-            sino también hoy, incluso con ese día tan difícil.
-        </p>
-
-        <p>
-            Descansa, mi amorcito.
-            Respira profundo.
-            Date permiso de soltar lo que te pesa.
-            Mañana será una nueva oportunidad. 🌙
-        </p>
-
-        <p>
-            Y nunca olvides que hay alguien que desea
-            verte feliz, que piensa en ti con muchísimo cariño
-            y que ahora mismo quisiera poder darte un besito
-            para terminar tu día de una manera más bonita.
-        </p>
-
-        <p style="font-size: 30px; margin-top: 20px;">
-            🍀❤️🥹💋
-        </p>
-
-        <p style="font-size: 23px;">
-            Te mereces todo lo bonito de este mundo.
-        </p>
-    </div>
-
-    <div class="firma">
-        Hecho con muchísimo cariño,<br>
-        para mi personita favorita. 💗<br><br>
-        <strong>Tu Trébol siempre tendrá un lugarcito
-        especial en mi corazón. 🍀</strong>
-    </div>
-
-</div>
-
-<script>
-    function crearCorazon() {
-        const corazon = document.createElement("div");
-        corazon.classList.add("heart");
-
-        const simbolos = ["❤️", "💕", "💗", "💖", "🌸", "🍀", "✨"];
-        corazon.innerHTML = simbolos[
-            Math.floor(Math.random() * simbolos.length)
-        ];
-
-        corazon.style.left = Math.random() * 100 + "vw";
-        corazon.style.animationDuration = (6 + Math.random() * 6) + "s";
-        corazon.style.fontSize = (15 + Math.random() * 20) + "px";
-
-        document.body.appendChild(corazon);
-
-        setTimeout(() => {
-            corazon.remove();
-        }, 12000);
-    }
-
-    setInterval(crearCorazon, 500);
-
-    function mostrarSorpresa() {
-        const sorpresa = document.getElementById("sorpresa");
-
-        sorpresa.style.display = "block";
-
-        document.querySelector("button").style.display = "none";
-
-        sorpresa.scrollIntoView({
-            behavior: "smooth",
-            block: "nearest"
-        });
-
-        for (let i = 0; i < 15; i++) {
-            setTimeout(crearCorazon, i * 150);
+            setTimeout(() => corazon.remove(), 9000);
         }
-    }
-</script>
+
+        setInterval(crearCorazon, 700);
+    </script>
 
 </body>
 </html>
+
 
 
 
